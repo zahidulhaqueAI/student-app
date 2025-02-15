@@ -22,7 +22,7 @@ def load_model():
 def prepossing_input_data(data, scaler, le):
     data['Extracurricular Activities'] = le.transform([data['Extracurricular Activities']])[0]
     df = pd.DataFrame([data])
-    df_transformed = scaler.fit_transform(df)
+    df_transformed = scaler.transform(df)
     return df_transformed
 
 def predict_data(data):
